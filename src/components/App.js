@@ -12,7 +12,7 @@ function App() {
 
   const [tasks, setTasks] = useState(TASKS)
   const [categories,setCategories] = useState(CATEGORIES)
-  const [selectedCategory, setSelectedCategory] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("All")
 
   console.log("tasks",tasks)
 

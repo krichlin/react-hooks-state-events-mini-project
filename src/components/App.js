@@ -23,14 +23,16 @@ function App() {
   }
   console.log(selectedCategory)
   
-
+  function onAdd(newTask) {
+    setTasks([...tasks, newTask])
+  }
 
 
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter categories={categories} setSelectedCategory={setSelectedCategory}/>
-      <NewTaskForm />
+      <CategoryFilter categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+      <NewTaskForm categories = {categories} onAdd={onAdd} />
       <TaskList tasks={tasks} onRemove={onRemove} selectedCategory={selectedCategory}/>
     </div>
   );

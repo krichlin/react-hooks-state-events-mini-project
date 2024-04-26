@@ -23,7 +23,7 @@ function App() {
   }
   console.log(selectedCategory)
   
-  function onAdd(newTask) {
+  function onTaskFormSubmit(newTask) {
     setTasks([...tasks, newTask])
   }
 
@@ -32,7 +32,7 @@ function App() {
     <div className="App">
       <h2>My tasks</h2>
       <CategoryFilter categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
-      <NewTaskForm categories = {categories} onAdd={onAdd} />
+      <NewTaskForm categories = {categories} onTaskFormSubmit={onTaskFormSubmit} />
       <TaskList tasks={tasks} onRemove={onRemove} selectedCategory={selectedCategory}/>
     </div>
   );

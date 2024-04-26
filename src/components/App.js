@@ -12,6 +12,8 @@ function App() {
 
   const [tasks, setTasks] = useState(TASKS)
   const [categories,setCategories] = useState(CATEGORIES)
+  const [selectedCategory, setSelectedCategory] = useState("")
+
   console.log("tasks",tasks)
 
   function onRemove(text){
@@ -19,13 +21,17 @@ function App() {
     setTasks(removeTask)
     // setTasks(task.filter((task) => task.text !== test ))
   }
+  console.log(selectedCategory)
   
+
+
+
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter categories={categories}/>
+      <CategoryFilter categories={categories} setSelectedCategory={setSelectedCategory}/>
       <NewTaskForm />
-      <TaskList tasks={tasks} onRemove={onRemove} />
+      <TaskList tasks={tasks} onRemove={onRemove} selectedCategory={selectedCategory}/>
     </div>
   );
 }
